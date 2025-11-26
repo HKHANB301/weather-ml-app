@@ -12,7 +12,7 @@ class TestAppSmoke(unittest.TestCase):
 
 	def test_get_form(self):
 		response = self.client.get('/')
-		self.assertIn(b"Welcome to the weather ml app", response.data)
+		self.assertIn(b"Weather Classification Input", response.data)
 
 if __name__ == '__main__':
 	unittest.main()
