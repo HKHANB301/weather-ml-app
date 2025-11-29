@@ -28,6 +28,7 @@
     - name: Install kubectl
       snap:
         name: kubectl
+        classic: yes
 # --- Minikube installation ---
     - name: Download Minikube
       get_url:
@@ -36,4 +37,5 @@
         mode: '0755'
 
     - name: Start Minikube
-      command: minikube start --force
+      command: minikube start --driver=docker
+      become: no
