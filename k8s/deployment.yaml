@@ -2,5 +2,4 @@
   hosts: localhost
   tasks:
     - name: Create deployment
-      command: kubectl create deployment weather-app --image=hkhanb301/weather-ml-app:v1
-
+      command: kubectl create deployment weather-app --image=hkhanb301/weather-ml-app:latest

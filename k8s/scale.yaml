@@ -1,0 +1,8 @@
+- name: Scale & update deployment
+  hosts: localhost
+  tasks:
+  - name: Scale deployment
+    command: kubectl scale deployments/weather-app --replicas=5
+
+  - name: roll update
+    command: kubectl set image deployments/weather-app *=hkhanb301/weather-ml-app:latest --all

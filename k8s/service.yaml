@@ -1,0 +1,5 @@
+- name: Create service for application
+  hosts: localhost
+  tasks:
+    - name: Create service
+      command: kubectl expose deployment/weather-app --type="NodePort" --port 5000 --name weather-app-service
