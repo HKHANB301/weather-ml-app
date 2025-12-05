@@ -37,3 +37,13 @@ jobs:
       run: |
         sleep 10
         curl http://localhost:5000/
+    - name: Log into dockerhub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: build and push
+      uses: docker/build-push-action@v6
+      with:
+        push: true
+        tags: olmue1967/weather-ml-app:latest
