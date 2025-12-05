@@ -36,4 +36,4 @@ jobs:
     - name: Test the docker container
       run: |
         sleep 10
-        curl https://localhost:5000/
+        curl http://localhost:5000/
