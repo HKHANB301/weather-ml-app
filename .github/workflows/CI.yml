@@ -31,3 +31,9 @@ jobs:
       run: pytest tests/integration_test.py
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag weather-ml-app:latest
+    - name: Run the docker container
+      run: docker run -d -p 5000:5000 weather-ml-app:latest
+    - name: Test the docker container
+      run: |
+        sleep 10
+        curl https://localhost:5000/
